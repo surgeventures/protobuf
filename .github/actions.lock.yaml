@@ -1,0 +1,47 @@
+version: 1
+generated_at: 2026-05-25T13:11:09Z
+internal: []
+trusted:
+  - action: actions/cache
+    refs:
+      - v2
+    occurrences:
+      v2:
+        .github/workflows/latest_conformance.yml:
+          - jobs.latest-conformance-test.steps.[4].uses
+        .github/workflows/main.yml:
+          - jobs.test.steps.[3].uses
+          - jobs.test.steps.[5].uses
+          - jobs.conformance-test.steps.[2].uses
+  - action: actions/checkout
+    refs:
+      - v2
+    occurrences:
+      v2:
+        .github/workflows/latest_conformance.yml:
+          - jobs.latest-conformance-test.steps.[0].uses
+          - jobs.latest-conformance-test.steps.[3].uses
+        .github/workflows/main.yml:
+          - jobs.test.steps.[0].uses
+          - jobs.conformance-test.steps.[0].uses
+external:
+  - action: arduino/setup-protoc
+    refs:
+      - v1
+    occurrences:
+      v1:
+        .github/workflows/main.yml:
+          - jobs.test.steps.[1].uses
+  - action: erlef/setup-beam
+    refs:
+      - v1
+    occurrences:
+      v1:
+        .github/workflows/latest_conformance.yml:
+          - jobs.latest-conformance-test.steps.[7].uses
+        .github/workflows/main.yml:
+          - jobs.test.steps.[2].uses
+          - jobs.conformance-test.steps.[1].uses
+local: []
+docker: []
+dynamic: []
