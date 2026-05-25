@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-05-25T13:11:09Z
+generated_at: 2026-05-25T15:39:21Z
 internal: []
 trusted:
   - action: actions/cache
@@ -27,16 +27,16 @@ trusted:
 external:
   - action: arduino/setup-protoc
     refs:
-      - v1
+      - 149f6c87b92550901b26acd1632e11c3662e381f
     occurrences:
-      v1:
+      149f6c87b92550901b26acd1632e11c3662e381f:
         .github/workflows/main.yml:
           - jobs.test.steps.[1].uses
   - action: erlef/setup-beam
     refs:
-      - v1
+      - fc68ffb90438ef2936bbb3251622353b3dcb2f93
     occurrences:
-      v1:
+      fc68ffb90438ef2936bbb3251622353b3dcb2f93:
         .github/workflows/latest_conformance.yml:
           - jobs.latest-conformance-test.steps.[7].uses
         .github/workflows/main.yml:
