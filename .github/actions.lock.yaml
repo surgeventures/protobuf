@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-06-11T15:39:52Z
+generated_at: 2026-06-15T13:16:05Z
 internal: []
 trusted:
   - action: actions/cache
@@ -15,9 +15,9 @@ trusted:
           - jobs.conformance-test.steps.[2].uses
   - action: actions/checkout
     refs:
-      - v2
+      - ee0669bd1cc54295c223e0bb666b733df41de1c5
     occurrences:
-      v2:
+      ee0669bd1cc54295c223e0bb666b733df41de1c5:
         .github/workflows/latest_conformance.yml:
           - jobs.latest-conformance-test.steps.[0].uses
           - jobs.latest-conformance-test.steps.[3].uses
