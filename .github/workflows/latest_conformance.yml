@@ -27,7 +27,7 @@ jobs:
 
     steps:
       - name: Checkout this repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2
 
       - name: Update and install dependencies to build protoc locally
         # Dependencies from https://github.com/protocolbuffers/protobuf/blob/main/src/README.md
@@ -39,7 +39,7 @@ jobs:
           echo sha="$( curl -u "u:${{github.token}}" https://api.github.com/repos/protocolbuffers/protobuf/git/ref/heads/main | jq .object.sha | tr -d '"' )" >> $GITHUB_OUTPUT
 
       - name: Checkout Protobuf repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2
         with:
           ref: ${{ steps.get-protobuf-sha.outputs.sha }}
           repository: protocolbuffers/protobuf
