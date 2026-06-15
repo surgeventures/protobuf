@@ -1,12 +1,12 @@
 version: 1
-generated_at: 2026-06-15T13:16:05Z
+generated_at: 2026-06-15T17:51:13Z
 internal: []
 trusted:
   - action: actions/cache
     refs:
-      - v2
+      - 8492260343ad570701412c2f464a5877dc76bace
     occurrences:
-      v2:
+      8492260343ad570701412c2f464a5877dc76bace:
         .github/workflows/latest_conformance.yml:
           - jobs.latest-conformance-test.steps.[4].uses
         .github/workflows/main.yml:
