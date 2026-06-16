@@ -48,7 +48,7 @@ jobs:
 
       - name: Cache built Protobuf source
         id: cache-protobuf-source
-        uses: actions/cache@v2
+        uses: actions/cache@8492260343ad570701412c2f464a5877dc76bace # v2
         with:
           path: protobuf
           key: ${{ runner.os }}-protobuf-${{ steps.get-protobuf-sha.outputs.sha }}
