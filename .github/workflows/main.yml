@@ -59,7 +59,7 @@ jobs:
 
       - name: Cache dependencies
         id: cache-deps
-        uses: actions/cache@8492260343ad570701412c2f464a5877dc76bace # v2
+        uses: step-security/runs-on-cache@c5b0cba15d05488ebc630ad8d1e95b3d9b35ac73 # v5.0.7
         with:
           path: deps
           key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}-elixir-${{ matrix.elixir }}-erlang-${{ matrix.otp }}
@@ -71,7 +71,7 @@ jobs:
       # Don't cache PLTs based on mix.lock hash, as Dialyzer can incrementally update even old ones
       # Cache key based on Elixir & Erlang version (also useful when running in matrix)
       - name: Cache Dialyzer's PLT
-        uses: actions/cache@8492260343ad570701412c2f464a5877dc76bace # v2
+        uses: step-security/runs-on-cache@c5b0cba15d05488ebc630ad8d1e95b3d9b35ac73 # v5.0.7
         id: cache-plt
         with:
           path: priv/plts
@@ -162,7 +162,7 @@ jobs:
 
       - name: Cache Elixir dependencies with compiled protoc
         id: cache-deps-with-built-protoc
-        uses: actions/cache@8492260343ad570701412c2f464a5877dc76bace # v2
+        uses: step-security/runs-on-cache@c5b0cba15d05488ebc630ad8d1e95b3d9b35ac73 # v5.0.7
         with:
           path: deps
           key: ${{ runner.os }}-mix-deps-with-protoc-${{ hashFiles('**/mix.lock') }}
