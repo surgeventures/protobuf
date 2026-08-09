@@ -1,6 +1,8 @@
 ExUnit.configure(exclude: [integration: true])
 ExUnit.start()
 
+Application.put_env(:protobuf, :compat, false)
+
 Protobuf.load_extensions()
 
 defmodule Protobuf.TestHelpers do

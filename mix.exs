@@ -2,13 +2,12 @@ defmodule Protobuf.Mixfile do
   use Mix.Project
 
   @source_url "https://github.com/surgeventures/protobuf"
-  @version "0.11.0"
   @description "A pure Elixir implementation of Google Protobuf."
 
   def project do
     [
       app: :protobuf,
-      version: @version,
+      version: "0.12.0",
       elixir: "~> 1.6",
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
@@ -94,7 +93,6 @@ defmodule Protobuf.Mixfile do
       extras: ["README.md"],
       main: "readme",
       source_url: @source_url,
-      source_ref: "v#{@version}"
     ]
   end
 
