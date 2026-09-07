@@ -27,13 +27,13 @@ jobs:
 
     steps:
       - name: Harden the runner
-        uses: step-security/harden-runner@9af89fc71515a100421586dfdb3dc9c984fbf411 # v2
+        uses: step-security/harden-runner@e14015d583714f6e62063499dc959a02595150a1 # v2
         with:
           use-policy-store: true
           api-key: ${{ secrets.GH_FRESHAENGINEERING_STEP_SECURITY_API_KEY }}
 
       - name: Checkout this repo
-        uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v2
 
       - name: Update and install dependencies to build protoc locally
         # Dependencies from https://github.com/protocolbuffers/protobuf/blob/main/src/README.md
@@ -45,7 +45,7 @@ jobs:
           echo sha="$( curl -u "u:${{github.token}}" https://api.github.com/repos/protocolbuffers/protobuf/git/ref/heads/main | jq .object.sha | tr -d '"' )" >> $GITHUB_OUTPUT
 
       - name: Checkout Protobuf repo
-        uses: actions/checkout@ee0669bd1cc54295c223e0bb666b733df41de1c5 # v2
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v2
         with:
           ref: ${{ steps.get-protobuf-sha.outputs.sha }}
           repository: protocolbuffers/protobuf
@@ -54,7 +54,7 @@ jobs:
 
       - name: Cache built Protobuf source
         id: cache-protobuf-source
-        uses: step-security/runs-on-cache@c5b0cba15d05488ebc630ad8d1e95b3d9b35ac73 # v5.0.7
+        uses: step-security/runs-on-cache@e61ed9b0206c630e9a6bb5f12ca4cd78ae7bbe93 # v5.0.7
         with:
           path: protobuf
           key: ${{ runner.os }}-protobuf-${{ steps.get-protobuf-sha.outputs.sha }}
